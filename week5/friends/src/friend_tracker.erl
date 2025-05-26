@@ -49,7 +49,7 @@ run(Friend_list) ->
 			From ! received,
 			run(lists:delete(Data, Friend_list));
 
-		{From, Command} when Command == get ->
+		{From, `Command} when Command == get ->
 			From ! Friend_list,
 			run(Friend_list);
 
@@ -58,24 +58,6 @@ run(Friend_list) ->
 			run(Friend_list)
 				
 	end.
-
-	
-% adder()->
-% 	receive
-% 		{From, A, B} when is_number(A), is_number(B)->
-% 			From ! A + B,
-% 			adder();
-% 		{From,A,B} when is_number(A), not is_number(B) ->
-% 			From ! {fail, B, is_not_number},
-% 			adder();
-% 		{From,A,B} when not is_number(A), is_number(B) ->
-% 			From ! {fail, A, is_not_number},
-% 			adder();
-% 		{From,A,B} when not is_number(A), not is_number(B) ->
-% 			From ! {fail, A, is_not_number},
-% 			adder()
-% 	end.
-
 
 -ifdef(EUNIT).
 %%
