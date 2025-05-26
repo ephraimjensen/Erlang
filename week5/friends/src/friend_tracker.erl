@@ -49,7 +49,7 @@ run(Friend_list) ->
 			From ! received,
 			run(lists:delete(Data, Friend_list));
 
-		{From, `Command} when Command == get ->
+		{From, Command} when Command == get ->
 			From ! Friend_list,
 			run(Friend_list);
 
@@ -58,6 +58,9 @@ run(Friend_list) ->
 			run(Friend_list)
 				
 	end.
+
+	
+
 
 -ifdef(EUNIT).
 %%
