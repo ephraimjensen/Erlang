@@ -3,10 +3,6 @@
 -export([start/0]).
 
 start() ->
-    case whereis(chat_server) of
-        undefined -> ok;
-        Pid -> exit(Pid, kill)
-    end,
     register(chat_server, spawn(fun() -> loop(#{} ) end)).
 
 loop(UserMap) ->

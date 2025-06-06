@@ -14,9 +14,9 @@ stop(_State) ->
 % chat_client:start("alice").
 
 % chat_client:send("bob", {"alice", "Hello Alice!!"}).
-% chat_client:send("alice", {"bob", "Howdy Bob."}).
+% % chat_client:send("alice", {"bob", "Howdy Bob."}).
 % chat_client:send("bob", {"steven", "Are you there Steven?"}).
-% 
+% % 
 % chat_client:start("steven").
 % chat_client:send("bob", {"steven", "Are you there Steven?"}).
 % chat_client:send("steven", {"bob", "I'm here now"}).
